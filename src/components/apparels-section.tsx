@@ -1,6 +1,5 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import Image from "next/image";
 
 export function ApparelsSection() {
   const products = [
@@ -53,7 +52,7 @@ export function ApparelsSection() {
               className="bg-black border-gray-800 overflow-hidden group hover:border-red-500 transition-colors"
             >
               <div className="aspect-square overflow-hidden group">
-                <Image
+                <img
                   src="/image.png"
                   alt={product.name}
                   width={100}

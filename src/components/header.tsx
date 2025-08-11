@@ -2,7 +2,6 @@
 
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import Image from "next/image";
 import { Menu, X } from "lucide-react"; // Icons
 
 export function Header() {
@@ -25,11 +24,11 @@ export function Header() {
       <nav className="flex items-center justify-between relative">
         {/* Logo */}
         <div className="flex items-center">
-          <Image
+          <img
             src="/image.png"
             alt="Logo"
-            width={40}
-            height={40}
+            width={38}
+            height={38}
             className="object-contain"
           />
           <h1 className="ml-2 text-xl font-bold text-white">

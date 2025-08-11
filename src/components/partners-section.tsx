@@ -1,23 +1,25 @@
 "use client";
 
 import { Card, CardContent } from "@/components/ui/card";
-import Image from "next/image";
 
 const partners = [
   {
     name: "Smalls Kitchen",
     instagram: "smalls_kitchen2020",
     logo: "/partners/smalls_kitchen_logo.jpeg",
+    trainerImage: "/partners/small.jpg",  // Trainer image
   },
   {
     name: "Tiago Tattoos",
     instagram: "Tiago_tattoos",
     logo: "/partners/tiago_logo.jpeg",
+    trainerImage: "/partners/tatto.jpg",  // Trainer image
   },
   {
     name: "Boxing - Coach BoxClever",
     instagram: "coachboxclever77, alg_boxing",
     logo: "/partners/boxclever_logo.jpeg",
+    trainerImage: "/partners/boxing.jpg",  // Trainer image
   },
 ];
 
@@ -39,24 +41,46 @@ export function PartnerSection() {
           </h2>
         </div>
 
-        {/* Gaffer */}
-        <div className="flex justify-center flex-wrap gap-3 mb-16 text-center">
+        {/* Partner Cards */}
+        <div className="flex justify-center flex-wrap gap-6 mb-16 text-center">
           {partners.map((partner, index) => (
             <Card
               key={index}
-              className="bg-black border-gray-800 hover:border-red-500 transition-colors w-72"
+              className="bg-black border-gray-800 hover:border-red-500 transition-colors w-72 rounded-lg shadow-lg overflow-hidden"
             >
-              <Image
-                src={partner.logo}
-                alt={partner.name}
-                width={200}
-                height={160}
-                className="w-full h-40 object-contain p-4"
-              />
+              {/* Trainer Image */}
+              <div className="w-[80%] ml-8 h-48 relative">
+                <img
+                  src={partner.trainerImage}
+                  alt={`${partner.name} trainer`}
+                  className="w-full h-full object-cover rounded-lg shadow-md"
+                />
+              </div>
 
-              <CardContent className="text-center pb-4">
+              {/* Partner Logo */}
+              <div className="w-[90%] ml-5 h-40 flex justify-center items-center">
+                <img
+                  src={partner.logo}
+                  alt={partner.name}
+                  width={200}
+                  height={160}
+                  className="w-full h-40 object-contain p-4"
+                />
+              </div>
+
+              {/* Partner Name and Instagram */}
+              <CardContent className="text-center">
                 <p className="font-medium text-gray-200">{partner.name}</p>
-                <p className="text-gray-400 text-sm">@{partner.instagram}</p>
+                <p className="text-gray-300 mt-2">
+                  <a
+                    href={`https://www.instagram.com/${partner.instagram}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-gray-300"
+                  >
+                    @{partner.instagram}
+                  </a>
+                </p>
               </CardContent>
             </Card>
           ))}

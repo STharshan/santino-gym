@@ -1,4 +1,3 @@
-import Image from "next/image";
 import { Instagram } from "lucide-react";
 
 export function Footer() {
@@ -7,7 +6,7 @@ export function Footer() {
       <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
         {/* Column 1: Brand */}
         <div>
-          <Image
+          <img
             src="/image.png"
             alt="Logo"
             width={40}

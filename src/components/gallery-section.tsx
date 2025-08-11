@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import Image from "next/image";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
 export function GallerySection() {
@@ -70,11 +69,10 @@ export function GallerySection() {
               key={index}
               className="relative h-64 bg-white flex items-center justify-center rounded-lg overflow-hidden group cursor-pointer border-2 border-transparent hover:border-red-500 transition-all duration-300"
             >
-              <Image
+              <img
                 src={image}
                 alt={`Gallery image ${startIndex + index + 1}`}
-                fill
-                className="object-cover transition-transform duration-300 group-hover:scale-105"
+                className="object-cover w-full h-full transition-transform duration-300 group-hover:scale-105"
               />
             </div>
           ))}

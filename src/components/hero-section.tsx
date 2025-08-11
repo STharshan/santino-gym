@@ -39,7 +39,7 @@ export function HeroSection() {
         </h1>
 
         <p className="text-gray-300 text-lg mb-8 max-w-2xl mx-auto lg:mx-0">
-          Ready To Change Your Physique, But Can’t Work Out In The Gym? changer this to: Ready to change your physique, but can’t find your gym?
+          Ready to change your physique, but can’t find your gym?
         </p>
 
         <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">

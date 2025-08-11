@@ -3,7 +3,6 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { useRef } from "react";
-import Image from "next/image";
 
 export function TrainersSection() {
   const scrollRef = useRef<HTMLDivElement | null>(null);
@@ -18,7 +17,7 @@ export function TrainersSection() {
 
   const gaffer = {
     name: "Will",
-    role: "Trainer and Coach",
+    role: "Owner and Personal Trainer",
     instagram: "wjs_coach_me",
     image: "/trainers/t4.jpeg",
   };
@@ -80,17 +79,25 @@ export function TrainersSection() {
         <div className="mb-16 text-center">
           <Card className="group mx-auto max-w-sm bg-black border-gray-800 hover:border-red-500 transition-all duration-300">
             <div className="relative w-full h-80 overflow-hidden">
-              <Image
+              <img
                 src={gaffer.image}
                 alt={gaffer.name}
-                fill
                 className="object-cover transition-transform duration-300 group-hover:scale-105"
               />
             </div>
             <CardContent className="p-6">
               <h3 className="text-xl font-bold mb-1">{gaffer.name}</h3>
               <p className="text-red-500 font-medium">{gaffer.role}</p>
-              <p className="text-gray-400 text-sm">@{gaffer.instagram}</p>
+              <p className="text-gray-200">
+                <a
+                  href={`https://www.instagram.com/${gaffer.instagram}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-gray-200"
+                >
+                  @{gaffer.instagram}
+                </a>
+              </p>
             </CardContent>
           </Card>
         </div>
@@ -124,18 +131,26 @@ export function TrainersSection() {
                   className="group min-w-[240px] bg-black border-gray-800 hover:border-red-500 transition-colors flex-shrink-0"
                 >
                   <div className="relative w-full h-64 overflow-hidden">
-                    <Image
+                    <img
                       src={pt.image}
                       alt={pt.name}
-                      fill
-                      className="object-cover transition-transform duration-300 group-hover:scale-105"
+                      className="object-cover w-full h-full transition-transform duration-300 group-hover:scale-105"
                     />
                   </div>
                   <CardContent className="p-4 text-center">
                     <h4 className="text-lg font-bold">{pt.name}</h4>
                     <p className="text-red-500">{pt.role}</p>
                     {pt.instagram && (
-                      <p className="text-gray-400 text-sm">@{pt.instagram}</p>
+                      <p className="text-gray-200">
+                        <a
+                          href={`https://www.instagram.com/${pt.instagram}`}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-gray-200"
+                        >
+                          @{pt.instagram}
+                        </a>
+                      </p>
                     )}
                   </CardContent>
                 </Card>
@@ -145,7 +160,7 @@ export function TrainersSection() {
         </div>
 
         {/* In-House Partners */}
-        {/*
+        {/* 
         <div>
           <h3 className="text-2xl font-semibold mb-8">In-House Partners</h3>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 justify-items-center">
