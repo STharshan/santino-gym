@@ -134,7 +134,7 @@ export function TrainersSection() {
                     <img
                       src={pt.image}
                       alt={pt.name}
-                      className="object-cover w-full h-full transition-transform duration-300 group-hover:scale-105"
+                      className="object-cover w-[90%] ml-3 rounded-lg h-full transition-transform duration-300 group-hover:scale-105"
                     />
                   </div>
                   <CardContent className="p-4 text-center">
