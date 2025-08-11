@@ -82,7 +82,7 @@ export function TrainersSection() {
               <img
                 src={gaffer.image}
                 alt={gaffer.name}
-                className="object-cover transition-transform duration-300 group-hover:scale-105"
+                className="object-cover w-full transition-transform duration-300 group-hover:scale-105"
               />
             </div>
             <CardContent className="p-6">
