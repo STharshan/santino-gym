@@ -58,11 +58,11 @@ export function TrainersSection() {
   return (
     <section
       id="trainers"
-      className="py-20 px-6 lg:px-12 bg-gray-900 text-white"
+      className="py-12 px-6 lg:px-12 bg-gray-900 text-white"
     >
       <div className="max-w-6xl mx-auto">
         {/* Section Header */}
-        <div className="text-center mb-16">
+        <div className="text-center mb-12">
           <div className="flex items-center justify-center mb-4">
             <div className="w-12 h-px bg-red-500 mr-4"></div>
             <p className="text-red-500 text-sm font-medium uppercase tracking-wider">
@@ -76,13 +76,13 @@ export function TrainersSection() {
         </div>
 
         {/* Gaffer */}
-        <div className="mb-16 text-center">
+        <div className="mb-12 text-center">
           <Card className="group mx-auto max-w-sm bg-black border-gray-800 hover:border-red-500 transition-all duration-300">
             <div className="relative w-full h-80 overflow-hidden">
               <img
                 src={gaffer.image}
                 alt={gaffer.name}
-                className="object-cover w-full transition-transform duration-300 group-hover:scale-105"
+                className="object-cover w-full h-full transition-transform duration-300 group-hover:scale-105"
               />
             </div>
             <CardContent className="p-6">
@@ -158,34 +158,6 @@ export function TrainersSection() {
             </div>
           </div>
         </div>
-
-        {/* In-House Partners */}
-        {/* 
-        <div>
-          <h3 className="text-2xl font-semibold mb-8">In-House Partners</h3>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 justify-items-center">
-            {partners.map((partner, index) => (
-              <Card
-                key={index}
-                className="bg-black border-gray-800 hover:border-red-500 transition-colors w-72"
-              >
-                <div className="relative w-full h-40">
-                  <Image
-                    src={partner.logo}
-                    alt={partner.name}
-                    fill
-                    className="object-contain p-4"
-                  />
-                </div>
-                <CardContent className="text-center pb-4">
-                  <p className="font-medium text-gray-200">{partner.name}</p>
-                  <p className="text-gray-400 text-sm">@{partner.instagram}</p>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-        */}
       </div>
     </section>
   );
