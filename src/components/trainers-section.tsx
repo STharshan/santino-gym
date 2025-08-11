@@ -130,7 +130,7 @@ export function TrainersSection() {
                   key={index}
                   className="group min-w-[240px] bg-black border-gray-800 hover:border-red-500 transition-colors flex-shrink-0"
                 >
-                  <div className="relative w-full h-64 sm:h-56 md:h-64 overflow-hidden">
+                  <div className="relative w-auto h-64 sm:h-56 md:h-64 overflow-hidden">
                     <img
                       src={pt.image}
                       alt={pt.name}
