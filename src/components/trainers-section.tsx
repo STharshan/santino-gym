@@ -86,7 +86,7 @@ export function TrainersSection() {
               />
             </div>
             <CardContent className="p-6">
-              <h3 className="text-xl font-bold mb-1">{gaffer.name}</h3>
+              <h3 className="text-xl text-gray-300 mb-1">{gaffer.name}</h3>
               <p className="text-red-500 font-medium">{gaffer.role}</p>
               <p className="text-gray-200">
                 <a
@@ -138,7 +138,7 @@ export function TrainersSection() {
                     />
                   </div>
                   <CardContent className="p-4 text-center">
-                    <h4 className="text-lg font-bold">{pt.name}</h4>
+                    <h4 className="text-lg text-gray-300">{pt.name}</h4>
                     <p className="text-red-500">{pt.role}</p>
                     {pt.instagram && (
                       <p className="text-gray-200">

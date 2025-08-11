@@ -17,15 +17,21 @@ const partners = [
   },
   {
     name: "Boxing - Coach BoxClever",
-    instagram: "coachboxclever77, alg_boxing",
+    instagram: "coachboxclever77",
     logo: "/partners/boxclever_logo.jpeg",
     trainerImage: "/partners/boxing.jpg",  // Trainer image
+  },
+  {
+    name: "Boxing - Coach BoxClever",
+    instagram: "alg_boxing",
+    logo: "/partners/boxclever_logo.jpeg",
+    trainerImage: "/partners/box.jpg",  // Trainer image
   },
 ];
 
 export function PartnerSection() {
   return (
-    <section id="partners" className="py-20 px-6 lg:px-12 bg-black text-white">
+    <section id="partners" className="mt-20 px-6 lg:px-12 bg-black text-white">
       <div className="max-w-6xl mx-auto">
         {/* Section Header */}
         <div className="text-center mb-16">
@@ -42,14 +48,14 @@ export function PartnerSection() {
         </div>
 
         {/* Partner Cards */}
-        <div className="flex justify-center flex-wrap gap-6 mb-16 text-center">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 mb-16 text-center">
           {partners.map((partner, index) => (
             <Card
               key={index}
-              className="bg-black border-gray-800 hover:border-red-500 transition-colors w-72 rounded-lg shadow-lg overflow-hidden"
+              className="bg-black border-gray-800 hover:border-red-500 transition-colors w-full rounded-lg shadow-lg overflow-hidden"
             >
               {/* Trainer Image */}
-              <div className="w-[80%] ml-8 h-48 relative">
+              <div className="w-[80%] ml-8 h-58 relative">
                 <img
                   src={partner.trainerImage}
                   alt={`${partner.name} trainer`}
