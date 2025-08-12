@@ -40,7 +40,7 @@ export function Header() {
         </div>
 
         {/* Desktop Nav */}
-        <div className="hidden lg:flex items-center space-x-8">
+        <div className="hidden xl:flex items-center space-x-8">
           {navItems.map((item) => (
             <a
               key={item.name}
@@ -53,7 +53,7 @@ export function Header() {
         </div>
 
         {/* CTA Button (desktop) */}
-        <div className="hidden lg:block">
+        <div className="hidden md:block ml-2">
           <a href="#services">
             <Button className="bg-red-500 hover:bg-red-600 text-white px-6 py-2 text-sm font-medium">
               BOOK A SESSION
@@ -62,7 +62,7 @@ export function Header() {
         </div>
 
         {/* Mobile Menu Button */}
-        <div className="lg:hidden">
+        <div className="xl:hidden">
           <button onClick={() => setIsSidebarOpen(!isSidebarOpen)}>
             {isSidebarOpen ? (
               <X className="text-white w-6 h-6" />
@@ -74,7 +74,7 @@ export function Header() {
 
         {/* Sidebar */}
         {isSidebarOpen && (
-          <div className="absolute top-full left-0 w-full bg-black flex flex-col items-start p-6 z-50 space-y-4 lg:hidden">
+          <div className="absolute top-full left-0 w-full bg-black flex flex-col items-start p-6 z-50 space-y-4 xl:hidden">
             {navItems.map((item) => (
               <a
                 key={item.name}

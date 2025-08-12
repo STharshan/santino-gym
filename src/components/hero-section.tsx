@@ -19,7 +19,7 @@ export function HeroSection() {
           Your browser does not support the video tag.
         </video>
         {/* Overlay to reduce brightness */}
-        <div className="absolute inset-0 bg-black opacity-70"></div> {/* Adjust opacity value as needed */}
+        <div className="absolute inset-0 bg-black opacity-70"></div>
       </div>
 
       {/* Content */}
@@ -43,15 +43,19 @@ export function HeroSection() {
         </p>
 
         <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-          <Button className="bg-red-500 hover:bg-red-600 text-white px-8 py-3 text-base font-medium">
-            JOIN WITH US
-          </Button>
-          <Button
-            variant="outline"
-            className="border-white text-white hover:bg-white hover:text-black px-8 py-3 text-base font-medium bg-transparent"
-          >
-            OUR SERVICES
-          </Button>
+          <a href="#services">
+            <Button className="bg-red-500 hover:bg-red-600 text-white px-8 py-3 text-base font-medium">
+              JOIN WITH US
+            </Button>
+          </a>
+          <a href="#services">
+            <Button
+              variant="outline"
+              className="border-white text-white hover:bg-white hover:text-black px-8 py-3 text-base font-medium bg-transparent"
+            >
+              OUR SERVICES
+            </Button>
+          </a>
         </div>
       </div>
     </section>
