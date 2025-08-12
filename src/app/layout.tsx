@@ -8,8 +8,7 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Santino's Gym & Studio - Your Fitness Your Victory",
-  description:
-    "Ready to change your physique, but can’t find your gym?",
+  description: "Ready to change your physique, but can&apos;t find your gym?",  // Escaped apostrophe
   generator: "Next.js",
 };
 
