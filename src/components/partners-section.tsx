@@ -55,7 +55,7 @@ export function PartnerSection() {
               className="bg-black border-gray-800 hover:border-red-500 transition-colors w-full rounded-lg shadow-lg overflow-hidden"
             >
               {/* Trainer Image */}
-              <div className="w-[60%] sm:w-[80%] ml-22 sm:ml-8 h-100 md:h-70 relative">
+              <div className="w-[62%] sm:w-[80%] ml-20 sm:ml-8 h-95 md:h-70 relative">
                 <img
                   src={partner.trainerImage}
                   alt={`${partner.name} trainer`}
