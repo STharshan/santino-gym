@@ -56,7 +56,7 @@ export function Header() {
         <div className="hidden md:block ml-4">
           <a href="#services">
             <Button className="bg-red-500 hover:bg-red-600 text-white px-6 py-2 text-sm font-medium">
-              BOOK A SESSION
+              JOIN WITH US
             </Button>
           </a>
         </div>
@@ -89,7 +89,7 @@ export function Header() {
               <Button
                 className="bg-red-500 hover:bg-red-600 text-white text-sm font-medium w-full"
               >
-                BOOK A SESSION
+                JOIN WITH US
               </Button>
             </a>
           </div>

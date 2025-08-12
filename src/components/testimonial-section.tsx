@@ -22,8 +22,7 @@ const testimonials = [
   {
     name: "Harry Pickard",
     content: `Out of all the bodybuilding gyms in Derby, not one can compete with the dedication and passion of the team behind Santino’s.
-
-The place is a haven for old school bodybuilding equipment, and new kit is added frequently. The owner genuinely cares about the experience for everyone. I couldn’t recommend it enough!`,
+              The place is a haven for old school bodybuilding equipment, and new kit is added frequently. The owner genuinely cares about the experience for everyone. I couldn’t recommend it enough!`,
     date: "3 months ago",
   },
   {
@@ -43,6 +42,59 @@ It’s not overrun by kids or poseurs, and membership and PT costs are very reas
     content: `The new venue for Santino’s gym is mind-blowing. It's by far the best gym in Derby. Staff are amazing, members are helpful, and if you're serious about body and mental self-confidence—this is the place!`,
     date: "3 years ago (edited)",
   },
+  {
+    name: "Michael Fox",
+    content: `This place was previously owned by a bodybuilder but unfortunately sold and moved on. Maybe wasn’t getting the support needed from the “True bodybuilders” the recent negative review was talking about since Will as taken over, he as made it a space that everyone is welcome, everyone is heard and everyone is considered apart of the family.`,
+    date: "3 months ago",
+  },
+  {
+    name: "Dennis Henshaw",
+    content: `An old building on two floors. Upstairs is a large beamed, wooden floor area for dancing or karate and downstairs is set up with all heavy and varied gym equipment. The place is well equiped but the make over of the inside leaves a lot to be desired and needs attention on decor to bring it into the 21st century. You can buy body building supplements at the main desk in the foyer`,
+    date: "7 years ago (edited)",
+  },
+  {
+    name: "Ben",
+    content: `Great proper old school gym. Staff are very friendly and welcoming would recommend if your in derby`,
+    date: "3 months ago",
+  },
+  {
+    name: "Sammi Joy",
+    content: `Brilliant old school gym, has everything you could ever need. Well maintained and a great atmosphere`,
+    date: "a years ago",
+  },
+  {
+    name: "Hannah Jackson",
+    content: `Absolutely amazing gym! Everyone in there is so supportive and encouraging! This gym as well as my personal trainer, Amber, are the reason for any improvement in my physical fitness! So tidy and clean also.`,
+    date: "a years ago ",
+  },
+  {
+    name: "Jason Holmes",
+    content: `Amazing gym. Highly recommend to everyone!`,
+    date: "3 months ago ",
+  },
+  {
+    name: "Luke Bell",
+    content: `Santinos is one of a kind. Many places say that they are like a family and fall flat of the statement. Santinos however certainly do have a family feel that makes you feel welcome the second you walk through the door. Owners Kim and Julie and the rest of the team are always happy to chat and offer friendly advice. Other gym users are both approachable and don't pry, they just get on with their workout. A step away from your average chain gym and a lovely environment to work out. The merch is also of good quality and reasonably priced.`,
+    date: "3 years ago",
+  },
+  {
+    name: "Chris Nicol",
+    content: `In Derby for a couple weeks with work and found this little gem of a gym! Reasonably priced, not too busy and very clean! The gym staff are friendly and attentive, 100% recommend this place!`,
+    date: "2 years ago",
+  }, 
+  {
+    name: "Bruce Darcy",
+    content: `Absolutely love this gym. I moved to Derby in early 2020, since training their Kim and Julie have become great friends and a great roll model too.
+              Highly recommend this gym`,
+    date: "3 years ago (edited)",
+  }, 
+  {
+    name: "Matt Craven",
+    content: `Amazing place to train. Lots of support from staff and members alike. Equipment is in top notch condition. Really good value for money with the support you receive. I highly recommend for beginners and professionals.`,
+    date: "a years ago",
+  },
+
+
 ];
 
 export function TestimonialsSection() {

@@ -67,12 +67,12 @@ export function GallerySection() {
           {currentImages.map((image, index) => (
             <div
               key={index}
-              className="relative h-64 bg-white flex items-center justify-center rounded-lg overflow-hidden group cursor-pointer border-2 border-transparent hover:border-red-500 transition-all duration-300"
+              className="relative h-130 w-[100%] flex items-center justify-center rounded-lg overflow-hidden group cursor-pointer border-2 border-white hover:border-red-500 transition-all duration-300"
             >
               <img
                 src={image}
                 alt={`Gallery image ${startIndex + index + 1}`}
-                className="object-cover w-full h-full transition-transform duration-300 group-hover:scale-105"
+                className="object-cover w-[100%] h-full transition-transform duration-300 group-hover:scale-105"
               />
             </div>
           ))}
