@@ -106,6 +106,19 @@ export function Footer() {
           rights reserved.
         </p>
       </div>
+      <div className=" mt-2 text-center text-sm">
+        <p>
+          Powered by{" "}
+          <a
+            href="https://www.ansely.co.uk/"  // Replace this with the actual Ansely website
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-red-500 hover:underline"
+          >
+            Ansely
+          </a>
+        </p>
+      </div>
     </footer>
   );
 }

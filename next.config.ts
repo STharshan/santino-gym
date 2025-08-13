@@ -2,11 +2,11 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   
-//output: 'export',
+output: 'export',
 
-  images: {
-    domains: ['images.pexels.com'], 
-  },
+  // images: {
+  //   domains: ['images.pexels.com'], 
+  // },
 };
 
 export default nextConfig;

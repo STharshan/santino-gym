@@ -78,14 +78,14 @@ export function TrainersSection() {
         {/* Gaffer */}
         <div className="mb-12 text-center">
           <Card className="group mx-auto max-w-sm bg-black border-gray-800 hover:border-red-500 transition-all duration-300">
-            <div className="relative w-full h-80 sm:h-72 md:h-80 overflow-hidden">
+            <div className="relative w-[90%] ml-5 rounded-lg h-80 sm:h-72 md:h-95 overflow-hidden">
               <img
                 src={gaffer.image}
                 alt={gaffer.name}
                 className="object-cover w-full h-full transition-transform duration-300 group-hover:scale-105"
               />
             </div>
-            <CardContent className="p-6">
+            <CardContent className="p-2">
               <h3 className="text-xl text-gray-300 mb-1">{gaffer.name}</h3>
               <p className="text-red-500 font-medium">{gaffer.role}</p>
               <p className="text-gray-200">
