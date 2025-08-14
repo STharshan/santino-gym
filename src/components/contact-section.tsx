@@ -38,6 +38,23 @@ export function ContactSection() {
   const sendEmail = (e: React.FormEvent) => {
     e.preventDefault();
 
+    // Form validation: Check if required fields are filled
+    if (!fullName || !email || !phone || !preferredContactMethod || !enquiryType) {
+      toast.error("Please fill in all required fields.");
+      return; // Stop further execution if validation fails
+    }
+
+    // Check if General enquiry requires membership goal or Personal Training requires fitness goal
+    if (enquiryType === "General" && !membershipGoal) {
+      toast.error("Please select a membership goal.");
+      return;
+    }
+
+    if (enquiryType === "Personal Training" && !fitnessGoal) {
+      toast.error("Please specify your fitness goal.");
+      return;
+    }
+
     const templateParams = {
       fullName,
       email,
@@ -166,7 +183,7 @@ export function ContactSection() {
                     onChange={(e) => setEmail(e.target.value)}
                   />
                   <Input
-                    type="tel"
+                    type="number"
                     placeholder="Phone Number"
                     className="bg-black border-gray-700 text-white placeholder:text-gray-400"
                     value={phone}
