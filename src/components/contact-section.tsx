@@ -73,10 +73,10 @@ export function ContactSection() {
 
     emailjs
       .send(
-        "service_2u9sb2c", // Replace with your EmailJS service ID
-        "template_db0pgim", // Replace with your EmailJS template ID
+        "service_k1hm06p", // Replace with your EmailJS service ID
+        "template_3xld4va", // Replace with your EmailJS template ID
         templateParams,
-        "ddjdtu50sL-rnwvZW" // Replace with your EmailJS user ID
+        "nVuj60c1KXuURvqfz" // Replace with your EmailJS user ID
       )
       .then(
         () => {
