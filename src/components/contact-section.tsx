@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import emailjs from "emailjs-com"; // Import EmailJS SDK
+import emailjs from "@emailjs/browser";  // New package
 import { toast, ToastContainer } from 'react-toastify'; // Import Toast
 
 import 'react-toastify/dist/ReactToastify.css'; // Import Toast CSS
