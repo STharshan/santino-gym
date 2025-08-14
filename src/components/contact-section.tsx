@@ -183,7 +183,7 @@ export function ContactSection() {
                     onChange={(e) => setEmail(e.target.value)}
                   />
                   <Input
-                    type="number"
+                    type="tel"
                     placeholder="Phone Number"
                     className="bg-black border-gray-700 text-white placeholder:text-gray-400"
                     value={phone}
