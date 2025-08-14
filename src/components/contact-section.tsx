@@ -9,7 +9,7 @@ import emailjs from "@emailjs/browser";  // New package
 import { toast, ToastContainer } from 'react-toastify'; // Import Toast
 
 import 'react-toastify/dist/ReactToastify.css'; // Import Toast CSS
-import { Instagram, Phone, Mail, MapPin } from "lucide-react"; // Import Lucide Icons
+import { Phone, Mail, MapPin } from "lucide-react"; // Import Lucide Icons
 
 export function ContactSection() {
   const [enquiryType, setEnquiryType] = useState<string>("");
@@ -62,13 +62,13 @@ export function ContactSection() {
         "ddjdtu50sL-rnwvZW" // Replace with your EmailJS user ID
       )
       .then(
-        (result) => {
+        () => {
           // Use toast notification for success
           toast.success("Enquiry has been sent successfully!");
           // Reset form fields after success
           resetForm();
         },
-        (error) => {
+        () => {
           // Use toast notification for error
           toast.error("There was an error sending your enquiry. Please try again later.");
         }
