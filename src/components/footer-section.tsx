@@ -79,10 +79,12 @@ export function Footer() {
           <p className="text-sm mb-2">
             Email:{" "}
             <a
-              href="mailto:info@legacygym.co.uk"
+              href="https://mail.google.com/mail/?view=cm&fs=1&to=info@santinosgym.com&su=Inquiry%20of%20Website"
+              target="_blank"
+              rel="noopener noreferrer"
               className="hover:text-red-500"
             >
-              info@legacygym.co.uk
+              info@santinosgym.com
             </a>
           </p>
           <p className="text-sm flex items-center gap-2">
