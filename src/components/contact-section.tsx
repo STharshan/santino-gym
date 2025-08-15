@@ -25,6 +25,7 @@ export function ContactSection() {
   const [message, setMessage] = useState<string>("");
   const [location, setLocation] = useState<string>("");
   const [startDate, setStartDate] = useState<string>("");
+  const [additionalInfo, setAdditionalInfo] = useState<string>(""); // New state for additional info
 
   // Options for dropdowns
   const enquiryOptions = ["General", "Personal Training", "Other"];
@@ -69,6 +70,7 @@ export function ContactSection() {
       message,
       location,  // Add location
       startDate,
+      additionalInfo, // Send additional information
     };
 
     emailjs
@@ -107,6 +109,7 @@ export function ContactSection() {
     setMessage("");
     setLocation("");
     setStartDate("");
+    setAdditionalInfo(""); // Reset additional information field
   };
 
   return (
@@ -303,6 +306,15 @@ export function ContactSection() {
                       onChange={(e) => setMessage(e.target.value)}
                     />
                   )}
+
+                  {/* Additional Information Text Box */}
+                  <Textarea
+                    placeholder="Additional Information"
+                    rows={4}
+                    className="bg-black border-gray-700 text-white placeholder:text-gray-400"
+                    value={additionalInfo}
+                    onChange={(e) => setAdditionalInfo(e.target.value)}
+                  />
 
                   <Button className="w-full bg-red-500 hover:bg-red-600 text-white">
                     Submit Enquiry
