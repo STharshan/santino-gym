@@ -79,18 +79,18 @@ export function Footer() {
           <p className="text-sm mb-2">
             Email:{" "}
             <a
-              href="https://mail.google.com/mail/?view=cm&fs=1&to=info@santinosgym.com&su=Inquiry%20of%20Website"
+              href={`https://mail.google.com/mail/?view=cm&fs=1&to=${process.env.NEXT_PUBLIC_CONTACT_EMAIL}&su=Inquiry%20of%20Website`}
               target="_blank"
               rel="noopener noreferrer"
               className="hover:text-red-500"
             >
-              info@santinosgym.com
+              {process.env.NEXT_PUBLIC_CONTACT_EMAIL}
             </a>
           </p>
           <p className="text-sm flex items-center gap-2">
             <Instagram className="w-4 h-4 text-white" />
             <a
-              href="https://www.instagram.com/santinos_gym/"
+              href={process.env.NEXT_PUBLIC_INSTAGRAM_URL}
               target="_blank"
               rel="noopener noreferrer"
               className="hover:text-red-500"
@@ -112,7 +112,7 @@ export function Footer() {
         <p>
           Powered by{" "}
           <a
-            href="https://www.ansely.co.uk/"  // Replace this with the actual Ansely website
+            href={process.env.NEXT_PUBLIC_POWERED_BY_URL}
             target="_blank"
             rel="noopener noreferrer"
             className="text-red-500 hover:underline"

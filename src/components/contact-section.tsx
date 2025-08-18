@@ -73,13 +73,12 @@ export function ContactSection() {
       additionalInfo, // Send additional information
     };
 
-    emailjs
-      .send(
-        "service_k1hm06p", // Replace with your EmailJS service ID
-        "template_3xld4va", // Replace with your EmailJS template ID
-        templateParams,
-        "nVuj60c1KXuURvqfz" // Replace with your EmailJS user ID
-      )
+    emailjs.send(
+      process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!,
+      process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!,
+      templateParams,
+      process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!
+    )
       .then(
         () => {
           // Use toast notification for success
