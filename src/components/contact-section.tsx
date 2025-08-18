@@ -56,6 +56,15 @@ export function ContactSection() {
       return;
     }
 
+    // Regex for UK phone numbers
+    const ukPhoneRegex = /^(\+44|0)[1-9]\d{8,9}$/;
+
+    // Phone validation
+    if (!ukPhoneRegex.test(phone)) {
+      toast.error("Please enter a valid UK phone number");
+      return;
+    }
+
     const templateParams = {
       fullName,
       email,
