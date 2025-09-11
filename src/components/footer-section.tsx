@@ -2,8 +2,8 @@ import { Instagram } from "lucide-react";
 
 export function Footer() {
   return (
-    <footer className="bg-gray-900 text-gray-300 py-10 px-6 lg:px-12">
-      <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
+    <footer className="bg-gray-900 text-gray-300 py-10 px-6 lg:px-15">
+      <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
         {/* Column 1: Brand */}
         <div>
           <img
@@ -98,6 +98,15 @@ export function Footer() {
               @santinos_gym
             </a>
           </p>
+        </div>
+        <div>
+           <h4 className="text-white text-lg font-semibold mb-4">Company</h4>
+ <li>
+              <Link to="/privacy-policy" className="hover:text-gray-300">Privacy Policy</Link> {/* Updated link */}
+            </li>
+            <li>
+              <Link to="/terms-conditions" className="hover:text-gray-300">Terms & Conditions</Link> {/* Updated link */}
+            </li>
         </div>
       </div>
 

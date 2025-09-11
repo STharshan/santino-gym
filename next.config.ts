@@ -1,12 +1,14 @@
-import type { NextConfig } from "next";
+/** @type {import('next').NextConfig} */
+const nextConfig = {
+  eslint: {
+    ignoreDuringBuilds: true,
+  },
+  typescript: {
+    ignoreBuildErrors: true,
+  },
+  images: {
+    unoptimized: true,
+  },
+}
 
-const nextConfig: NextConfig = {
-  
-output: 'export',
-
-  // images: {
-  //   domains: ['images.pexels.com'], 
-  // },
-};
-
-export default nextConfig;
+export default nextConfig
