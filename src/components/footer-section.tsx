@@ -101,13 +101,15 @@ export function Footer() {
           </p>
         </div>
         <div>
-           <h4 className="text-white text-lg font-semibold mb-4">Company</h4>
- <li>
-              <Link href="/privacy-policy" className="hover:text-gray-300">Privacy Policy</Link> {/* Updated link */}
+          <h4 className="text-white text-lg font-semibold mb-3">Company</h4>
+          <ul className="list-none">
+            <li>
+              <Link href="/privacy-policy" className="hover:text-red-500">Privacy Policy</Link>
             </li>
             <li>
-              <Link href="/terms-and-conditions" className="hover:text-gray-300">Terms & Conditions</Link> {/* Updated link */}
+              <Link href="/terms-and-conditions" className="hover:text-red-500">Terms & Conditions</Link>
             </li>
+          </ul>
         </div>
       </div>
 
