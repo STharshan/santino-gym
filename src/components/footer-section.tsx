@@ -101,7 +101,7 @@ export function Footer() {
           </p>
         </div>
         <div>
-          <h4 className="text-white text-lg font-semibold mb-3">Company</h4>
+          <h4 className="text-white text-lg font-semibold mb-3">Company Policy</h4>
           <ul className="list-none">
             <li>
               <Link href="/privacy-policy" className="hover:text-red-500">Privacy Policy</Link>
