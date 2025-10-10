@@ -3,7 +3,7 @@ import { HeroSection } from "@/components/hero-section";
 import { ServicesSection } from "@/components/services-section";
 import { GallerySection } from "@/components/gallery-section";
 import { ApparelsSection } from "@/components/apparels-section";
-// import { CookieConsent } from "@/components/cookie-consent";
+import GDPRConsent from "@/components/cookie-consent";
 import { AboutSection } from "@/components/about-section";
 import { ContactSection } from "@/components/contact-section";
 import { TrainersSection } from "@/components/trainers-section";
@@ -27,7 +27,7 @@ export default function HomePage() {
       <ContactSection />
       <FindUs />
       <Footer />
-      {/* <CookieConsent /> */}
+      <GDPRConsent />
     </div>
   );
 }

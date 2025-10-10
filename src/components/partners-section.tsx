@@ -7,25 +7,25 @@ const partners = [
     name: "Smalls Kitchen",
     instagram: "smalls_kitchen2020",
     logo: "/partners/smalls_kitchen_logo.jpeg",
-    trainerImage: "/partners/small.jpg",  // Trainer image
+    trainerImage: "/partners/small.jpg",
   },
   {
     name: "Tiago Tattoos",
     instagram: "Tiago_tattoos",
     logo: "/partners/tiago_logo.jpeg",
-    trainerImage: "/partners/tatto.jpg",  // Trainer image
+    trainerImage: "/partners/tatto.jpg",
   },
   {
     name: "Boxing - Coach BoxClever",
     instagram: "coachboxclever77",
     logo: "/partners/boxclever_logo.jpeg",
-    trainerImage: "/partners/boxing.jpg",  // Trainer image
+    trainerImage: "/partners/boxing.jpg",
   },
   {
     name: "Boxing - Coach BoxClever",
     instagram: "alg_boxing",
     logo: "/partners/boxclever_logo.jpeg",
-    trainerImage: "/partners/box.jpg",  // Trainer image
+    trainerImage: "/partners/box.jpg",
   },
 ];
 
@@ -48,41 +48,41 @@ export function PartnerSection() {
         </div>
 
         {/* Partner Cards */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 mb-16 text-center">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-16 text-center">
           {partners.map((partner, index) => (
             <Card
               key={index}
-              className="bg-black border-gray-800 hover:border-red-500 transition-colors w-full rounded-lg shadow-lg overflow-hidden"
+              className="bg-black border-gray-800 hover:border-red-500 transition-colors w-full rounded-lg shadow-lg overflow-hidden flex flex-col items-center justify-start"
             >
               {/* Trainer Image */}
-              <div className="w-[62%] sm:w-[80%] ml-20 sm:ml-8 h-95 md:h-70 relative">
+              <div className="flex justify-center items-center w-full mt-6">
                 <img
                   src={partner.trainerImage}
                   alt={`${partner.name} trainer`}
-                  className="w-full h-full object-cover rounded-lg shadow-md"
+                  className="w-[70%] sm:w-[80%] md:w-[85%] object-cover rounded-lg shadow-md"
                 />
               </div>
 
               {/* Partner Logo */}
-              <div className="w-[90%] ml-5 h-40 flex justify-center items-center">
+              <div className="flex justify-center items-center w-full mt-6">
                 <img
                   src={partner.logo}
                   alt={partner.name}
                   width={200}
                   height={160}
-                  className="w-full h-40 object-contain p-4"
+                  className="w-[70%] sm:w-[80%] md:w-[85%] h-auto object-contain p-4"
                 />
               </div>
 
               {/* Partner Name and Instagram */}
-              <CardContent className="text-center">
+              <CardContent className="text-center pb-6">
                 <p className="font-medium text-gray-200">{partner.name}</p>
                 <p className="text-gray-300 mt-2">
                   <a
                     href={`https://www.instagram.com/${partner.instagram}`}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-gray-300"
+                    className="text-gray-300 hover:text-red-500 transition"
                   >
                     @{partner.instagram}
                   </a>

@@ -11,40 +11,33 @@ const testimonials = [
     date: "3 years ago",
     content:
       " What an awesome place to train. Having previously been a member at The Gym and JD, Santino's is a breath of fresh air! Good selection of free weights and bars, lots of machines, some old, some new, all chosen because they work well. Kim and julie are also very friendly and welcoming. Proper gym",
-    //     name: "Michael Fox",
-    //     content: `Couldn’t recommend this gym enough. Will and the team will not only make you feel extremely welcome but will go above and beyond for your every need.
-
-    // Since Will has taken over, he has made it a space that everyone is welcome, everyone is heard, and everyone is considered a part of the family.
-
-    // If you’re looking for a gym with a variety of kit, helpful staff, and an amazing community—Sanctioned is the gym for you. Will, keep doing what you're doing man!`,
-    //     date: "3 months ago",
   },
   {
     name: "Harry Pickard",
-    content: `Out of all the bodybuilding gyms in Derby, not one can compete with the dedication and passion of the team behind Santino’s.
-              The place is a haven for old school bodybuilding equipment, and new kit is added frequently. The owner genuinely cares about the experience for everyone. I couldn’t recommend it enough!`,
+    content: `Out of all the bodybuilding gyms in Derby, not one can compete with the dedication and passion of the team behind Santino's.
+              The place is a haven for old school bodybuilding equipment, and new kit is added frequently. The owner genuinely cares about the experience for everyone. I couldn't recommend it enough!`,
     date: "3 months ago",
   },
   {
     name: "Rab",
     content: `Amber and Will are great personal trainers. Will is a very nice guy and I trust him implicitly as my trainer. The gym has all the free weights and equipment you could want.
 
-It’s not overrun by kids or poseurs, and membership and PT costs are very reasonable. I wouldn’t go anywhere else.`,
+It's not overrun by kids or poseurs, and membership and PT costs are very reasonable. I wouldn't go anywhere else.`,
     date: "3 months ago",
   },
   {
     name: "Jessica Kelly",
-    content: `Great gym with a wide range of high-quality equipment. The gym is suitable for all gym goers, which I like. The owner, Will, is kind and lovely—couldn’t recommend it enough!`,
+    content: `Great gym with a wide range of high-quality equipment. The gym is suitable for all gym goers, which I like. The owner, Will, is kind and lovely—couldn't recommend it enough!`,
     date: "3 months ago",
   },
   {
     name: "Jut Terry",
-    content: `The new venue for Santino’s gym is mind-blowing. It's by far the best gym in Derby. Staff are amazing, members are helpful, and if you're serious about body and mental self-confidence—this is the place!`,
+    content: `The new venue for Santino's gym is mind-blowing. It's by far the best gym in Derby. Staff are amazing, members are helpful, and if you're serious about body and mental self-confidence—this is the place!`,
     date: "3 years ago (edited)",
   },
   {
     name: "Michael Fox",
-    content: `This place was previously owned by a bodybuilder but unfortunately sold and moved on. Maybe wasn’t getting the support needed from the “True bodybuilders” the recent negative review was talking about since Will as taken over, he as made it a space that everyone is welcome, everyone is heard and everyone is considered apart of the family.`,
+    content: `This place was previously owned by a bodybuilder but unfortunately sold and moved on. Maybe wasn't getting the support needed from the "True bodybuilders" the recent negative review was talking about since Will as taken over, he as made it a space that everyone is welcome, everyone is heard and everyone is considered apart of the family.`,
     date: "3 months ago",
   },
   {
@@ -73,11 +66,6 @@ It’s not overrun by kids or poseurs, and membership and PT costs are very reas
     date: "3 months ago ",
   },
   {
-    name: "Luke Bell",
-    content: `Santinos is one of a kind. Many places say that they are like a family and fall flat of the statement. Santinos however certainly do have a family feel that makes you feel welcome the second you walk through the door. Owners Kim and Julie and the rest of the team are always happy to chat and offer friendly advice. Other gym users are both approachable and don't pry, they just get on with their workout. A step away from your average chain gym and a lovely environment to work out. The merch is also of good quality and reasonably priced.`,
-    date: "3 years ago",
-  },
-  {
     name: "Chris Nicol",
     content: `In Derby for a couple weeks with work and found this little gem of a gym! Reasonably priced, not too busy and very clean! The gym staff are friendly and attentive, 100% recommend this place!`,
     date: "2 years ago",
@@ -93,8 +81,6 @@ It’s not overrun by kids or poseurs, and membership and PT costs are very reas
     content: `Amazing place to train. Lots of support from staff and members alike. Equipment is in top notch condition. Really good value for money with the support you receive. I highly recommend for beginners and professionals.`,
     date: "a years ago",
   },
-
-
 ];
 
 export function TestimonialsSection() {
@@ -108,17 +94,17 @@ export function TestimonialsSection() {
   };
 
   return (
-    <section id="testimonials" className="py-20 px-6 lg:px-12 bg-gray-900">
+    <section id="testimonials" className="py-16 px-4 sm:px-6 lg:px-12 bg-gray-900">
       <div className="max-w-6xl mx-auto">
-        <div className="text-center mb-16">
-          <div className="flex items-center justify-center mb-8">
-            <div className="w-12 h-px bg-red-500 mr-4"></div>
-            <p className="text-red-500 text-sm font-medium uppercase tracking-wider">
+        <div className="text-center mb-12 sm:mb-16">
+          <div className="flex items-center justify-center mb-6 sm:mb-8">
+            <div className="w-8 sm:w-12 h-px bg-red-500 mr-3 sm:mr-4"></div>
+            <p className="text-red-500 text-xs sm:text-sm font-medium uppercase tracking-wider">
               Testimonials
             </p>
-            <div className="w-12 h-px bg-red-500 ml-4"></div>
+            <div className="w-8 sm:w-12 h-px bg-red-500 ml-3 sm:ml-4"></div>
           </div>
-          <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-4 sm:mb-6 px-4">
             What Our Members Say
           </h2>
         </div>
@@ -126,36 +112,40 @@ export function TestimonialsSection() {
         <div className="relative">
           <button
             onClick={() => scroll("left")}
-            className="absolute left-0 top-1/2 -translate-y-1/2 bg-red-500 hover:bg-red-600 text-white p-2 rounded-full z-10"
+            className="hidden sm:block absolute left-0 top-1/2 -translate-y-1/2 bg-red-500 hover:bg-red-600 text-white p-2 rounded-full z-10 transition-colors"
+            aria-label="Scroll left"
           >
             <ChevronLeft size={24} />
           </button>
 
           <div
             ref={scrollRef}
-            className="flex gap-6 overflow-x-auto scroll-smooth scrollbar-hide px-12"
+            className="flex gap-4 sm:gap-6 overflow-x-auto scroll-smooth scrollbar-hide px-4 sm:px-12"
+            style={{
+              scrollbarWidth: 'none',
+              msOverflowStyle: 'none',
+            }}
           >
             {testimonials.map((t, index) => (
               <Card
                 key={index}
-                className="min-w-[320px] max-w-sm bg-gray-900 border-gray-800 hover:border-red-500 transition-colors"
+                className="max-w-xs flex-shrink-0 bg-gray-900 border-gray-800 hover:border-red-500 transition-colors"
               >
-                <CardContent className="p-6 flex flex-col h-full">
-                  {/* ⭐ Star Rating */}
+                <CardContent className="p-4 sm:p-6 flex flex-col h-full">
                   <div className="flex items-center mb-2">
                     {[...Array(5)].map((_, i) => (
                       <Star
                         key={i}
-                        className="h-4 w-4 text-yellow-400 fill-yellow-400 mr-1"
+                        className="h-3 w-3 sm:h-4 sm:w-4 text-yellow-400 fill-yellow-400 mr-1"
                       />
                     ))}
                   </div>
 
-                  <p className="text-gray-300 mb-4 flex-1 whitespace-pre-line">
+                  <p className="text-gray-300 text-sm sm:text-base mb-4 flex-1 whitespace-pre-line">
                     {t.content}
                   </p>
 
-                  <div className="mt-4 text-sm text-gray-400 font-medium">
+                  <div className="text-xs sm:text-sm text-gray-400 font-medium">
                     — {t.name}, <span className="text-gray-500">{t.date}</span>
                   </div>
                 </CardContent>
@@ -165,12 +155,37 @@ export function TestimonialsSection() {
 
           <button
             onClick={() => scroll("right")}
-            className="absolute right-0 top-1/2 -translate-y-1/2 bg-red-500 hover:bg-red-600 text-white p-2 rounded-full z-10"
+            className="hidden sm:block absolute right-0 top-1/2 -translate-y-1/2 bg-red-500 hover:bg-red-600 text-white p-2 rounded-full z-10 transition-colors"
+            aria-label="Scroll right"
           >
             <ChevronRight size={24} />
           </button>
         </div>
+
+        {/* Mobile scroll indicators */}
+        <div className="flex justify-center gap-2 mt-6 sm:hidden">
+          <button
+            onClick={() => scroll("left")}
+            className="bg-red-500 hover:bg-red-600 text-white p-2 rounded-full transition-colors"
+            aria-label="Scroll left"
+          >
+            <ChevronLeft size={20} />
+          </button>
+          <button
+            onClick={() => scroll("right")}
+            className="bg-red-500 hover:bg-red-600 text-white p-2 rounded-full transition-colors"
+            aria-label="Scroll right"
+          >
+            <ChevronRight size={20} />
+          </button>
+        </div>
       </div>
+
+      <style jsx>{`
+        .scrollbar-hide::-webkit-scrollbar {
+          display: none;
+        }
+      `}</style>
     </section>
   );
 }

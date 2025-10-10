@@ -93,7 +93,7 @@ export function TrainersSection() {
                   href={`https://www.instagram.com/${gaffer.instagram}`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-gray-200"
+                  className="text-gray-200 hover:text-red-500 active:text-red-500"
                 >
                   @{gaffer.instagram}
                 </a>
@@ -146,7 +146,7 @@ export function TrainersSection() {
                           href={`https://www.instagram.com/${pt.instagram}`}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="text-gray-200"
+                          className="text-gray-200 hover:text-red-500 active:text-red-500"
                         >
                           @{pt.instagram}
                         </a>

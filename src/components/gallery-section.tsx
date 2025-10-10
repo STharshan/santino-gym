@@ -28,7 +28,7 @@ export function GallerySection() {
   );
 
   return (
-    <section id="gallery" className="py-20 px-6 lg:px-12 bg-black">
+    <section id="gallery" className="px-6 lg:px-12 bg-black">
       <div className="max-w-6xl mx-auto">
         {/* Heading */}
         <div className="text-center mb-16">

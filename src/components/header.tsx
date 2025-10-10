@@ -53,7 +53,7 @@ export function Header() {
         </div>
 
         {/* CTA Button (desktop) */}
-        <div className="hidden md:block ml-4">
+        <div className="hidden lg:block ml-4">
           <a href="#services">
             <Button className="bg-red-500 hover:bg-red-600 text-white px-6 py-2 text-sm font-medium">
               JOIN WITH US
