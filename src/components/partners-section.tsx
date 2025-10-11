@@ -1,6 +1,9 @@
 "use client";
 
+import { useEffect } from "react";
 import { Card, CardContent } from "@/components/ui/card";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const partners = [
   {
@@ -30,11 +33,19 @@ const partners = [
 ];
 
 export function PartnerSection() {
+  useEffect(() => {
+    AOS.init({
+      duration: 1000,
+      easing: "ease-in-out",
+      once: false, // 👈 animation triggers every scroll
+    });
+  }, []);
+
   return (
-    <section id="partners" className="mt-20 px-6 lg:px-12 bg-black text-white">
+    <section id="partners" className="mt-20 px-6 lg:px-12 bg-black text-white" data-aos="fade-up">
       <div className="max-w-6xl mx-auto">
         {/* Section Header */}
-        <div className="text-center mb-16">
+        <div className="text-center mb-16" data-aos="fade-down">
           <div className="flex items-center justify-center mb-8">
             <div className="w-12 h-px bg-red-500 mr-4"></div>
             <p className="text-red-500 text-sm font-medium uppercase tracking-wider">
@@ -52,6 +63,7 @@ export function PartnerSection() {
           {partners.map((partner, index) => (
             <Card
               key={index}
+              data-aos="zoom-in"
               className="bg-black border-gray-800 hover:border-red-500 transition-colors w-full rounded-lg shadow-lg overflow-hidden flex flex-col items-center justify-start"
             >
               {/* Trainer Image */}

@@ -1,17 +1,27 @@
 "use client"; // Mark this file as a client-side component to use React hooks
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import emailjs from "@emailjs/browser";  // New package
-import { toast, ToastContainer } from 'react-toastify'; // Import Toast
-
-import 'react-toastify/dist/ReactToastify.css'; // Import Toast CSS
-import { Phone, Mail, MapPin } from "lucide-react"; // Import Lucide Icons
+import emailjs from "@emailjs/browser";
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import { Phone, Mail, MapPin } from "lucide-react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 export function ContactSection() {
+  // ✅ Initialize AOS (animations replay every time)
+  useEffect(() => {
+    AOS.init({
+      duration: 1200,
+      easing: "ease-in-out",
+      once: false,
+    });
+  }, []);
+
   const [enquiryType, setEnquiryType] = useState<string>("");
   const [preferredContactMethod, setPreferredContactMethod] = useState<string>("");
   const [membershipGoal, setMembershipGoal] = useState<string>("");
@@ -25,9 +35,8 @@ export function ContactSection() {
   const [message, setMessage] = useState<string>("");
   const [location, setLocation] = useState<string>("");
   const [startDate, setStartDate] = useState<string>("");
-  const [additionalInfo, setAdditionalInfo] = useState<string>(""); // New state for additional info
+  const [additionalInfo, setAdditionalInfo] = useState<string>("");
 
-  // Options for dropdowns
   const enquiryOptions = ["General", "Personal Training", "Other"];
   const membershipGoals = ["Lose Weight", "Build Muscle", "Stay Fit", "Other"];
   const trainerGenders = ["No Preference", "Male", "Female"];
@@ -35,17 +44,14 @@ export function ContactSection() {
   const trainingDaysOptions = ["1", "2", "3", "4+"];
   const preferredContactMethods = ["Phone", "Email", "Text"];
 
-  // EmailJS sending function
   const sendEmail = (e: React.FormEvent) => {
     e.preventDefault();
 
-    // Form validation: Check if required fields are filled
     if (!fullName || !email || !phone || !preferredContactMethod || !enquiryType) {
       toast.error("Please fill in all required fields.");
-      return; // Stop further execution if validation fails
+      return;
     }
 
-    // Check if General enquiry requires membership goal or Personal Training requires fitness goal
     if (enquiryType === "General" && !membershipGoal) {
       toast.error("Please select a membership goal.");
       return;
@@ -56,10 +62,7 @@ export function ContactSection() {
       return;
     }
 
-    // Regex for UK phone numbers
     const ukPhoneRegex = /^(\+44|0)[1-9]\d{8,9}$/;
-
-    // Phone validation
     if (!ukPhoneRegex.test(phone)) {
       toast.error("Please enter a valid UK phone number");
       return;
@@ -77,32 +80,29 @@ export function ContactSection() {
       sessionPreference,
       trainingDays,
       message,
-      location,  // Add location
+      location,
       startDate,
-      additionalInfo, // Send additional information
+      additionalInfo,
     };
 
-    emailjs.send(
-      process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!,
-      process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!,
-      templateParams,
-      process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!
-    )
+    emailjs
+      .send(
+        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!,
+        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!,
+        templateParams,
+        process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!
+      )
       .then(
         () => {
-          // Use toast notification for success
           toast.success("Enquiry has been sent successfully!");
-          // Reset form fields after success
           resetForm();
         },
         () => {
-          // Use toast notification for error
           toast.error("There was an error sending your enquiry. Please try again later.");
         }
       );
   };
 
-  // Reset the form fields
   const resetForm = () => {
     setFullName("");
     setEmail("");
@@ -117,17 +117,20 @@ export function ContactSection() {
     setMessage("");
     setLocation("");
     setStartDate("");
-    setAdditionalInfo(""); // Reset additional information field
+    setAdditionalInfo("");
   };
 
   return (
     <>
-      {/* Toast Container to display toast messages */}
       <ToastContainer />
 
-      <section id="contact" className="py-20 px-6 lg:px-12 bg-black text-white">
+      <section
+        id="contact"
+        className="py-20 px-6 lg:px-12 bg-black text-white"
+        data-aos="fade-up"
+      >
         <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-16">
+          <div className="text-center mb-16" data-aos="zoom-in">
             <div className="flex items-center justify-center mb-8">
               <div className="w-12 h-px bg-red-500 mr-4"></div>
               <p className="text-red-500 text-sm font-medium uppercase tracking-wider">
@@ -141,14 +144,15 @@ export function ContactSection() {
           </div>
 
           <div className="grid lg:grid-cols-2 gap-12">
-            <div>
+            {/* Contact Info Section */}
+            <div data-aos="fade-right">
               <h3 className="text-2xl font-bold text-white mb-6">
                 Ready to Start Your Journey?
               </h3>
               <div className="space-y-6">
                 <div className="flex items-center">
                   <div className="w-12 h-12 bg-red-500 rounded-full flex items-center justify-center mr-4">
-                    <MapPin className="text-white w-6 h-6" /> {/* Location Icon */}
+                    <MapPin className="text-white w-6 h-6" />
                   </div>
                   <div>
                     <p className="text-white font-medium">Address</p>
@@ -157,7 +161,7 @@ export function ContactSection() {
                 </div>
                 <div className="flex items-center">
                   <div className="w-12 h-12 bg-red-500 rounded-full flex items-center justify-center mr-4">
-                    <Phone className="text-white w-6 h-6" /> {/* Phone Icon */}
+                    <Phone className="text-white w-6 h-6" />
                   </div>
                   <div>
                     <p className="text-white font-medium">Phone</p>
@@ -166,7 +170,7 @@ export function ContactSection() {
                 </div>
                 <div className="flex items-center">
                   <div className="w-12 h-12 bg-red-500 rounded-full flex items-center justify-center mr-4">
-                    <Mail className="text-white w-6 h-6" /> {/* Email Icon */}
+                    <Mail className="text-white w-6 h-6" />
                   </div>
                   <div>
                     <p className="text-white font-medium">Email</p>
@@ -176,8 +180,12 @@ export function ContactSection() {
               </div>
             </div>
 
-            {/* The form to submit data */}
-            <Card className="bg-gray-900 border-gray-800">
+            {/* Form Section */}
+            <Card
+              className="bg-gray-900 border-gray-800"
+              data-aos="fade-left"
+              data-aos-delay="200"
+            >
               <CardContent className="p-8">
                 <form className="space-y-6" onSubmit={sendEmail}>
                   <Input
@@ -200,6 +208,7 @@ export function ContactSection() {
                     value={phone}
                     onChange={(e) => setPhone(e.target.value)}
                   />
+
                   {/* Select fields */}
                   <select
                     value={preferredContactMethod}
@@ -253,7 +262,7 @@ export function ContactSection() {
                         placeholder="Start Date"
                         className="bg-black border-gray-700 text-white placeholder:text-gray-400"
                         value={startDate}
-                        onChange={(e) => setStartDate(e.target.value)} // Handle the date change
+                        onChange={(e) => setStartDate(e.target.value)}
                       />
                     </>
                   )}
@@ -315,7 +324,6 @@ export function ContactSection() {
                     />
                   )}
 
-                  {/* Additional Information Text Box */}
                   <Textarea
                     placeholder="Additional Information"
                     rows={4}

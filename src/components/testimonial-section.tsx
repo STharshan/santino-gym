@@ -1,9 +1,10 @@
 "use client";
 
-import { useRef } from "react";
+import { useRef, useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 import { Card, CardContent } from "@/components/ui/card";
-import { ChevronLeft, ChevronRight } from "lucide-react";
-import { Star } from "lucide-react";
+import { ChevronLeft, ChevronRight, Star } from "lucide-react";
 
 const testimonials = [
   {
@@ -69,13 +70,13 @@ It's not overrun by kids or poseurs, and membership and PT costs are very reason
     name: "Chris Nicol",
     content: `In Derby for a couple weeks with work and found this little gem of a gym! Reasonably priced, not too busy and very clean! The gym staff are friendly and attentive, 100% recommend this place!`,
     date: "2 years ago",
-  }, 
+  },
   {
     name: "Bruce Darcy",
     content: `Absolutely love this gym. I moved to Derby in early 2020, since training their Kim and Julie have become great friends and a great roll model too.
               Highly recommend this gym`,
     date: "3 years ago (edited)",
-  }, 
+  },
   {
     name: "Matt Craven",
     content: `Amazing place to train. Lots of support from staff and members alike. Equipment is in top notch condition. Really good value for money with the support you receive. I highly recommend for beginners and professionals.`,
@@ -86,6 +87,14 @@ It's not overrun by kids or poseurs, and membership and PT costs are very reason
 export function TestimonialsSection() {
   const scrollRef = useRef<HTMLDivElement>(null);
 
+  useEffect(() => {
+    AOS.init({
+      duration: 1000,
+      easing: "ease-in-out",
+      once: false,
+    });
+  }, []);
+
   const scroll = (direction: "left" | "right") => {
     if (scrollRef.current) {
       const scrollAmount = direction === "left" ? -350 : 350;
@@ -94,9 +103,13 @@ export function TestimonialsSection() {
   };
 
   return (
-    <section id="testimonials" className="py-16 px-4 sm:px-6 lg:px-12 bg-gray-900">
+    <section
+      id="testimonials"
+      className="py-16 px-4 sm:px-6 lg:px-12 bg-gray-900"
+      data-aos="fade-up"
+    >
       <div className="max-w-6xl mx-auto">
-        <div className="text-center mb-12 sm:mb-16">
+        <div className="text-center mb-12 sm:mb-16" data-aos="fade-down">
           <div className="flex items-center justify-center mb-6 sm:mb-8">
             <div className="w-8 sm:w-12 h-px bg-red-500 mr-3 sm:mr-4"></div>
             <p className="text-red-500 text-xs sm:text-sm font-medium uppercase tracking-wider">
@@ -122,14 +135,16 @@ export function TestimonialsSection() {
             ref={scrollRef}
             className="flex gap-4 sm:gap-6 overflow-x-auto scroll-smooth scrollbar-hide px-4 sm:px-12"
             style={{
-              scrollbarWidth: 'none',
-              msOverflowStyle: 'none',
+              scrollbarWidth: "none",
+              msOverflowStyle: "none",
             }}
           >
             {testimonials.map((t, index) => (
               <Card
                 key={index}
                 className="max-w-xs flex-shrink-0 bg-gray-900 border-gray-800 hover:border-red-500 transition-colors"
+                data-aos="fade-up"
+                data-aos-delay={index * 100}
               >
                 <CardContent className="p-4 sm:p-6 flex flex-col h-full">
                   <div className="flex items-center mb-2">

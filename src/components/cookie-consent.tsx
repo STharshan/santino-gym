@@ -1,11 +1,22 @@
-"use client"; // 👈 Add this line at the very top
+"use client";
 
 import { useEffect, useState } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const GDPRConsent: React.FC = () => {
-  const [visible, setVisible] = useState<boolean>(false); // Show consent banner
-  const [accepted, setAccepted] = useState<boolean | null>(null); // true/false/null
-  const [showIcon, setShowIcon] = useState<boolean>(false); // Show cookie icon
+  const [visible, setVisible] = useState<boolean>(false);
+  const [accepted, setAccepted] = useState<boolean | null>(null);
+  const [showIcon, setShowIcon] = useState<boolean>(false);
+
+  // 👇 Initialize AOS animation
+  useEffect(() => {
+    AOS.init({
+      duration: 1000,
+      easing: "ease-in-out",
+      once: false, // 👈 ensures animation works every scroll
+    });
+  }, []);
 
   useEffect(() => {
     const consent = localStorage.getItem("gdprConsent");
@@ -41,6 +52,7 @@ const GDPRConsent: React.FC = () => {
       {/* Cookie Banner */}
       {visible && (
         <div
+          data-aos="fade-up" // 👈 animation added here
           className="fixed bottom-4 left-4 right-4 md:bottom-6 text-center md:right-6 md:left-auto 
                      max-w-full md:max-w-xs p-4 rounded-lg text-gray-900 shadow-lg z-50 
                      bg-gray-900 dark:text-gray-100 transition-colors"
@@ -77,7 +89,10 @@ const GDPRConsent: React.FC = () => {
 
       {/* Cookie Icon */}
       {showIcon && !visible && (
-        <div className="fixed bottom-4 right-4 md:bottom-6 md:right-6 z-40">
+        <div
+          data-aos="zoom-in" // 👈 subtle animation for the icon
+          className="fixed bottom-4 right-4 md:bottom-6 md:right-6 z-40"
+        >
           <button
             onClick={handleIconClick}
             className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-red-500 shadow-lg border border-white 

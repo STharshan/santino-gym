@@ -1,14 +1,29 @@
-// src/pages/PrivacyPolicy.tsx
-import React from 'react';
+"use client";
+
+import React, { useEffect } from 'react';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 const PrivacyPolicy: React.FC = () => {
+    useEffect(() => {
+        AOS.init({
+            duration: 1000,
+            easing: "ease-in-out",
+            once: false, // 👈 animation triggers every scroll
+        });
+    }, []);
+
     return (
-        <div className="mx-auto px-4 py-12 sm:px-6 lg:px-16 bg-black text-white">
-            <h1 className="text-4xl font-semibold text-center mb-8 mt-15">Privacy Policy</h1>
-            <p className="text-center text-white">Last updated: 09/09/25</p>
+        <div className="mx-auto px-4 py-12 sm:px-6 lg:px-16 bg-black text-white" data-aos="fade-up">
+            <h1 className="text-4xl font-semibold text-center mb-8 mt-15" data-aos="fade-down">
+                Privacy Policy
+            </h1>
+            <p className="text-center text-white mb-8" data-aos="fade-down">
+                Last updated: 09/09/25
+            </p>
 
             <div className="mt-8 space-y-6">
-                <section>
+                <section data-aos="fade-right">
                     <h2 className="text-2xl font-medium">1. Information We Collect</h2>
                     <p className="text-white">
                         When you complete a form on our website or contact us directly, we may collect:
@@ -25,7 +40,7 @@ const PrivacyPolicy: React.FC = () => {
                     </p>
                 </section>
 
-                <section>
+                <section data-aos="fade-left">
                     <h2 className="text-2xl font-medium">2. Lawful Basis for Processing</h2>
                     <p className="text-white">
                         We only process your personal data where we have a lawful basis to do so. This includes:
@@ -38,7 +53,7 @@ const PrivacyPolicy: React.FC = () => {
                     </ul>
                 </section>
 
-                <section>
+                <section data-aos="fade-right">
                     <h2 className="text-2xl font-medium">3. How We Use Your Information</h2>
                     <p className="text-white">
                         We use your personal data to:
@@ -54,7 +69,7 @@ const PrivacyPolicy: React.FC = () => {
                     </p>
                 </section>
 
-                <section>
+                <section data-aos="fade-left">
                     <h2 className="text-2xl font-medium">4. Sharing Your Information</h2>
                     <p className="text-white">
                         We may share your personal data only with:
@@ -66,28 +81,28 @@ const PrivacyPolicy: React.FC = () => {
                     </ul>
                 </section>
 
-                <section>
+                <section data-aos="fade-right">
                     <h2 className="text-2xl font-medium">5. Cookies & Website Tracking</h2>
                     <p className="text-white">
                         Our website may use cookies or similar technologies to improve user experience and monitor website performance. You can set your browser to refuse cookies if you prefer.
                     </p>
                 </section>
 
-                <section>
+                <section data-aos="fade-left">
                     <h2 className="text-2xl font-medium">6. Data Security</h2>
                     <p className="text-white">
                         We take appropriate measures to keep your personal information secure and prevent unauthorized access, disclosure, alteration, or destruction.
                     </p>
                 </section>
 
-                <section>
+                <section data-aos="fade-right">
                     <h2 className="text-2xl font-medium">7. How Long We Keep Your Information</h2>
                     <p className="text-white">
                         We keep your personal data only for as long as necessary to fulfill the purposes for which it was collected, including legal, accounting, or reporting requirements.
                     </p>
                 </section>
 
-                <section>
+                <section data-aos="fade-left">
                     <h2 className="text-2xl font-medium">8. Your Rights</h2>
                     <p className="text-white">
                         Under UK GDPR, you have the right to:
@@ -105,7 +120,7 @@ const PrivacyPolicy: React.FC = () => {
                     </p>
                 </section>
 
-                <section>
+                <section data-aos="fade-right">
                     <h2 className="text-2xl font-medium">9. Contact Us</h2>
                     <p className="text-white">
                         If you have any questions about this Privacy Policy or how we handle your personal data, please contact us:

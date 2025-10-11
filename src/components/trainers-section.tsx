@@ -2,10 +2,20 @@
 
 import { Card, CardContent } from "@/components/ui/card";
 import { ChevronLeft, ChevronRight } from "lucide-react";
-import { useRef } from "react";
+import { useRef, useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 export function TrainersSection() {
   const scrollRef = useRef<HTMLDivElement | null>(null);
+
+  useEffect(() => {
+    AOS.init({
+      duration: 1000,
+      easing: "ease-in-out",
+      once: false,
+    });
+  }, []);
 
   const scrollLeft = () => {
     scrollRef.current?.scrollBy({ left: -300, behavior: "smooth" });
@@ -59,10 +69,11 @@ export function TrainersSection() {
     <section
       id="trainers"
       className="py-12 px-6 lg:px-12 bg-gray-900 text-white"
+      data-aos="fade-up"
     >
       <div className="max-w-6xl mx-auto">
         {/* Section Header */}
-        <div className="text-center mb-12">
+        <div className="text-center mb-12" data-aos="fade-down">
           <div className="flex items-center justify-center mb-4">
             <div className="w-12 h-px bg-red-500 mr-4"></div>
             <p className="text-red-500 text-sm font-medium uppercase tracking-wider">
@@ -76,7 +87,7 @@ export function TrainersSection() {
         </div>
 
         {/* Gaffer */}
-        <div className="mb-12 text-center">
+        <div className="mb-12 text-center" data-aos="zoom-in">
           <Card className="group mx-auto max-w-sm bg-black border-gray-800 hover:border-red-500 transition-all duration-300">
             <div className="relative w-[90%] ml-5 rounded-lg h-80 sm:h-72 md:h-95 overflow-hidden">
               <img
@@ -104,7 +115,9 @@ export function TrainersSection() {
 
         {/* Personal Trainers */}
         <div className="mb-20">
-          <h3 className="text-2xl font-semibold mb-6">Personal Trainers</h3>
+          <h3 className="text-2xl font-semibold mb-6" data-aos="fade-right">
+            Personal Trainers
+          </h3>
           <div className="relative">
             {/* Arrows */}
             <button
@@ -129,6 +142,8 @@ export function TrainersSection() {
                 <Card
                   key={index}
                   className="group w-[300px] bg-black border-gray-800 hover:border-red-500 transition-colors flex-shrink-0"
+                  data-aos="fade-up"
+                  data-aos-delay={index * 100}
                 >
                   <div className="relative overflow-hidden">
                     <img

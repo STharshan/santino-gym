@@ -1,7 +1,20 @@
+"use client";
+
+import { useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 
 export function ApparelsSection() {
+  useEffect(() => {
+    AOS.init({
+      duration: 1200,
+      easing: "ease-in-out",
+      once: false,
+    });
+  }, []);
+
   const products = [
     {
       name: "Santino's Training Shirt",
@@ -30,9 +43,13 @@ export function ApparelsSection() {
   ];
 
   return (
-    <section id="apparels" className="py-20 px-6 lg:px-12 bg-gray-900">
+    <section
+      id="apparels"
+      className="py-20 px-6 lg:px-12 bg-gray-900"
+      data-aos="fade-up"
+    >
       <div className="max-w-6xl mx-auto">
-        <div className="text-center mb-16">
+        <div className="text-center mb-16" data-aos="zoom-in">
           <div className="flex items-center justify-center mb-8">
             <div className="w-12 h-px bg-red-500 mr-4"></div>
             <p className="text-red-500 text-sm font-medium uppercase tracking-wider">
@@ -45,11 +62,17 @@ export function ApparelsSection() {
           </h2>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div
+          className="grid md:grid-cols-2 lg:grid-cols-4 gap-8"
+          data-aos="fade-up"
+          data-aos-delay="200"
+        >
           {products.map((product, index) => (
             <Card
               key={index}
               className="bg-black border-gray-800 overflow-hidden group hover:border-red-500 transition-colors"
+              data-aos="fade-up"
+              data-aos-delay={index * 150}
             >
               <div className="aspect-square overflow-hidden group">
                 <img

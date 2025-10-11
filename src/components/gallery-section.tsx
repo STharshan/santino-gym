@@ -1,7 +1,9 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 export function GallerySection() {
   const galleryImages = Array.from(
@@ -10,6 +12,14 @@ export function GallerySection() {
   );
   const IMAGES_PER_PAGE = 6;
   const [startIndex, setStartIndex] = useState(0);
+
+  useEffect(() => {
+    AOS.init({
+      duration: 1000,
+      easing: "ease-in-out",
+      once: false, // animation triggers every scroll
+    });
+  }, []);
 
   const handleScroll = (direction: "left" | "right") => {
     const nextIndex =
@@ -28,10 +38,10 @@ export function GallerySection() {
   );
 
   return (
-    <section id="gallery" className="px-6 lg:px-12 bg-black">
+    <section id="gallery" className="px-6 lg:px-12 bg-black" data-aos="fade-up">
       <div className="max-w-6xl mx-auto">
         {/* Heading */}
-        <div className="text-center mb-16">
+        <div className="text-center mb-16" data-aos="fade-down">
           <div className="flex items-center justify-center mb-8">
             <div className="w-12 h-px bg-red-500 mr-4"></div>
             <p className="text-red-500 text-sm font-medium uppercase tracking-wider">
@@ -45,7 +55,7 @@ export function GallerySection() {
         </div>
 
         {/* Arrows */}
-        <div className="flex items-center justify-center gap-6 pb-3">
+        <div className="flex items-center justify-center gap-6 pb-3" data-aos="fade-up">
           <button
             onClick={() => handleScroll("left")}
             disabled={startIndex === 0}
@@ -67,6 +77,7 @@ export function GallerySection() {
           {currentImages.map((image, index) => (
             <div
               key={index}
+              data-aos="zoom-in"
               className="relative h-130 w-[100%] flex items-center justify-center rounded-lg overflow-hidden group cursor-pointer border-2 border-white hover:border-red-500 transition-all duration-300"
             >
               <img

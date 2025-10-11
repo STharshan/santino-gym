@@ -1,12 +1,24 @@
+"use client";
+import { useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 import { Card, CardContent } from "@/components/ui/card";
 import { Trophy, Dumbbell, Repeat, Sparkles, Flame } from "lucide-react";
 
 export function AboutSection() {
+  useEffect(() => {
+    AOS.init({
+      duration: 1000,
+      easing: "ease-in-out",
+      once: false,
+    });
+  }, []);
+
   return (
     <section id="about" className="py-24 px-6 lg:px-12 bg-gray-900">
       <div className="max-w-6xl mx-auto">
         {/* Section Heading */}
-        <div className="text-center mb-20">
+        <div className="text-center mb-20" data-aos="fade-down">
           <div className="flex items-center justify-center mb-6">
             <div className="w-12 h-px bg-red-500 mr-4"></div>
             <p className="text-red-500 text-sm font-semibold uppercase tracking-widest">
@@ -25,7 +37,7 @@ export function AboutSection() {
         </div>
 
         {/* First Row of Cards */}
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-3 gap-8" data-aos="fade-up">
           <Card className="bg-black border border-gray-800 hover:border-red-500 transition-all duration-300 shadow-lg">
             <CardContent className="p-8 text-center">
               <div className="flex justify-center mb-6 text-red-500">
@@ -76,7 +88,7 @@ export function AboutSection() {
         </div>
 
         {/* Second Row of Cards */}
-        <div className="grid md:grid-cols-2 gap-8 mt-14">
+        <div className="grid md:grid-cols-2 gap-8 mt-14" data-aos="fade-up">
           <Card className="bg-black border border-gray-800 hover:border-red-500 transition-all duration-300 shadow-lg">
             <CardContent className="p-8">
               <div className="flex items-center mb-6 text-red-500">
@@ -97,7 +109,10 @@ export function AboutSection() {
             </CardContent>
           </Card>
 
-          <Card className="bg-black border border-gray-800 hover:border-red-500 transition-all duration-300 shadow-lg">
+          <Card
+            className="bg-black border border-gray-800 hover:border-red-500 transition-all duration-300 shadow-lg"
+            data-aos="fade-up"
+          >
             <CardContent className="p-8">
               <div className="flex items-center mb-6 text-red-500">
                 <Flame className="w-8 h-8 mr-2" />
